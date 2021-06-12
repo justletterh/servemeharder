@@ -8,3 +8,11 @@ services:
       - "./flask/:/app"
     ports:
       - "8018:8018"
+  php:
+    build: ./php/
+    restart: always
+    entrypoint: php -S 0.0.0.0:8028 -t /app
+    volumes:
+      - "./php/:/app"
+    ports:
+      - "8028:8028"
