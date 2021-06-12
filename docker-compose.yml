@@ -1,0 +1,10 @@
+version: "2.4"
+services:
+  flask:
+    build: ./flask/
+    restart: always
+    entrypoint: python3 /app/main.py
+    volumes:
+      - "./flask/:/app"
+    ports:
+      - "8018:8018"
